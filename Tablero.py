@@ -1,12 +1,12 @@
 def hola():
-    print("Hola")
+    print("fgfgfgf")
 
 def hola():
-    print("Hola")
+    print("fgfgfgfgf")
 
 def hola():
-    print("Hola")
+    print("fgfgfg")
 
 def hola():
-    print("Hola")
+    print("gfgfg")
 
