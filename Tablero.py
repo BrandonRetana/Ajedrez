@@ -2,11 +2,11 @@ def hola():
     print("Hola")
 
 def hola():
-    print("Hola")
+    print("Hola como")
 
 def hola():
-    print("Hola")
+    print("Hola como ")
 
 def hola():
-    print("Hola")
+    print("Hola comom ")
 
