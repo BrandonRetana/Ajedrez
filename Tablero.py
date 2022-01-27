@@ -3,11 +3,11 @@ def hola():
 
 def hola():
 
-    print("Hola")
+    print("Analisis")
 
 def hola():
-    print("Hola")
+    print("Eddy no te quiero ver")
 
 def hola():
-    print("gfgfg")
+    print("hol k ase")
 
