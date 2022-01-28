@@ -59,6 +59,7 @@ class ficha():
             x+=valueX
             y+=valueY
             print("("+str(x)+","+str(y)+")")
+            
             '''
                 Espacio para alguna funcion que compruebe si
                 los espacios no estan ocupados por otras fichas
