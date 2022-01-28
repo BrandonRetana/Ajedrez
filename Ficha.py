@@ -1,3 +1,6 @@
+from turtle import pos, position
+
+
 class ficha():
     def __init__(self,name,movementXY,movementV,X,Y):
         self.name = name
@@ -5,6 +8,7 @@ class ficha():
         self.movementV = movementV
         self.posX = X
         self.posY = Y
+        self.stillAlive = True
 
     def moveXY(self,X,Y):
         #----Verifica si el movimiento es posible----#
@@ -83,13 +87,47 @@ class ficha():
         for valid in validPosition:
             if (valid == [i,j]):
                 print("New position ("+str(i)+', '+str(j)+')')
+                self.posX = i
+                self.posY = j
                 return True
-            print("Position not allowed")
-            return False
+        print("Position not allowed")
+        return False
     
+    #---- Esta funcion saca el moviento que puede tener el rey ----#
+    def kingMove(self,i,j):
+        validPosition = []
+        positions = [[self.posX+1, self.posY-1] ,[self.posX+1,self.posY],[self.posX+1,self.posY+1] ,[self.posX, self.posY-1] ,[self.posX,self.posY+1],[self.posX-1, self.posY-1],[self.posX-1,self.posY],[self.posX-1, self.posY+1]]
+        for couple in positions:
+            if (self.simpleVerification(couple[0],couple[1])):
+                validPosition.append(couple)
+        for valid in validPosition:
+            if (valid == [i,j]):
+                print("New position ("+str(i)+', '+str(j)+')')
+                self.posX = i
+                self.posY = j
+                return True
+        print("Position not allowed")
+        return False
 
 
-
+    #---- Esta funcion saca el moviento que puede tener el peon ----#
+    def pawnMove(self,i,j):
+        validPosition = []
+        if (self.posY == 1):
+            positions = [[self.posX, self.posY+1],[self.posX, self.posY+2],[self.posX+1, self.posY+1],[self.posX-1, self.posY+1]]
+        else :
+            positions= [[self.posX, self.posY+1],[self.posX+1, self.posY+1],[self.posX-1, self.posY+1]]
+        for couple in positions:
+            if (self.simpleVerification(couple[0],couple[1])):
+                validPosition.append(couple)
+        for valid in validPosition:
+            if (valid == [i,j]):
+                print("New position ("+str(i)+', '+str(j)+')')
+                self.posX = i
+                self.posY = j
+                return True
+        print("Position not allowed")
+        return False
 
 
     
