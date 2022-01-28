@@ -67,6 +67,26 @@ class ficha():
         return True
 
 
+    def simpleVerification(self,x,y):
+        '''
+        Esta fucnion deberia dar un booleano si la casilla esta vacio o no.
+        '''
+        return True
+
+    #---- Esta funcion saca el moviento que puede tener el caballo ----#
+    def moveL(self,i,j):
+        validPosition = []
+        positions = [[self.posX+1, self.posY+2] ,[self.posX+2, self.posY+1] ,[self.posX+1, self.posY-2] ,[self.posX+2,self.posY-1] ,[self.posX-1,self.posY-2],[self.posX-2,self.posY-1],[self.posX-2,self.posY+1],[self.posX-1,self.posY+2]]
+        for couple in positions:
+            if (self.simpleVerification(couple[0],couple[1])):
+                validPosition.append(couple)
+        for valid in validPosition:
+            if (valid == [i,j]):
+                print("New position ("+str(i)+', '+str(j)+')')
+                return True
+            print("Position not allowed")
+            return False
+    
 
 
 
