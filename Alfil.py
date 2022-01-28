@@ -1,5 +1,5 @@
 from Ficha import ficha
 
-Alfil = ficha("Alfil",False,True,1,1)
+Alfil = ficha("Alfil",False,True,6,4)
 
-Alfil.moveZ(5,5)
+Alfil.moveZ(4,2)
