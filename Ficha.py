@@ -46,8 +46,8 @@ class ficha():
 
         if(self.posY < newY):
             valueY = 1
-        elif(self.posX == newX):
-            valueX = 0
+        elif(self.posY == newY):
+            valueY = 0
         else:
             valueY = -1
 
