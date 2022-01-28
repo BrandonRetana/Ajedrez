@@ -1,5 +1,5 @@
 from Ficha import ficha
 
-peon = ficha("Rey",False,False,1,1)
+peon = ficha("peon",False,False,1,1)
 
-peon.kingMove(1,2)
+peon.pawnMove(1,3)
