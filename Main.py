@@ -1,5 +1,8 @@
 
+from email.policy import default
+from pydoc import text
 import tkinter as tk
+
 import AppAjedrez  
 class Interfaz():
 
@@ -18,33 +21,43 @@ class Interfaz():
         self.window = tk.Canvas(self.ventana)
         self.window.pack(fill="both", expand=True)
 
+
     def __call__(self):
         self.ventana.mainloop()  
 
-
-    def dibujarTablero(self):
-        for i in range(8):
-            for j in range(8):
-                if (i+j) % 2 ==0: #->dibuja los arios XD
-                    self.window.create_rectangle(i*self.L_CUADRADO, j*self.L_CUADRADO, (i+1)*self.L_CUADRADO, (j+1)*self.L_CUADRADO, fill="#ffffff")
-                else: #->dibuja los morenos XD
-                    self.window.create_rectangle(i*self.L_CUADRADO, j*self.L_CUADRADO, (i+1)*self.L_CUADRADO, (j+1)*self.L_CUADRADO, fill="#162B4E")   
 
     def caragarImagenes(self):
         fichas = ["alfil-blanco","alfil-negro","caballo-blanco", "caballo-negro","peon-blanco","peon-negro","reina-blanca","reina-negra","rey-blanco","rey-negro","torre-blanca","torre-negra"]
         for ficha in fichas:
                 self.imagenes[ficha]= tk.PhotoImage(file="./imagenes/" + ficha + ".png")
-                self.imagenes[ficha] = self.imagenes[ficha].subsample(33) #ajusta el tamano
+                self.imagenes[ficha] = self.imagenes[ficha].subsample(31) #ajusta el tamano
+
+    def prueba(self):
+        print("prueba")
+    
 
     def mostrarFichas(self):
+        color = "#ffffff"
         for indice_i, i in enumerate(self.gs.piezas):
+            if(color == "#162B4E"):
+                color = "#ffffff"
+            else:
+                color = "#162B4E"
             for indice_j, j in enumerate(i):
+                if(color == "#162B4E"):
+                    color = "#ffffff"
+                else:
+                    color = "#162B4E"
                 if j!= "--":
-                    self.window.create_image(indice_j*self.L_CUADRADO,indice_i*self.L_CUADRADO, image=self.imagenes[j.getName()], anchor="nw", )
+                    ficha = tk.Button(image=self.imagenes[j.getName()],borderwidth=0,bg = color,activebackground="#69F7AB",command=lambda:self.prueba())
+                    ficha.place(x = indice_j*self.L_CUADRADO+1,y =indice_i*self.L_CUADRADO+1)
+                else:
+                    ficha = tk.Button(width=10,height=5, borderwidth=0,bg = color,activebackground="#77D5F3")
+                    ficha.place(x = indice_j*self.L_CUADRADO+1,y =indice_i*self.L_CUADRADO+1)
+                    
                     
 
 interfaz = Interfaz(70)
-interfaz.dibujarTablero()
 interfaz.caragarImagenes()
 interfaz.mostrarFichas()
 interfaz()
