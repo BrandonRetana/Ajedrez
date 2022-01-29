@@ -1,6 +1,5 @@
 from turtle import pos, position
 
-
 class ficha():
     def __init__(self,name,movementXY,movementV,X,Y):
         self.name = name

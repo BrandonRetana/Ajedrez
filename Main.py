@@ -28,7 +28,7 @@ class Interfaz():
                 if (i+j) % 2 ==0: #->dibuja los arios XD
                     self.window.create_rectangle(i*self.L_CUADRADO, j*self.L_CUADRADO, (i+1)*self.L_CUADRADO, (j+1)*self.L_CUADRADO, fill="#ffffff")
                 else: #->dibuja los morenos XD
-                    self.window.create_rectangle(i*self.L_CUADRADO, j*self.L_CUADRADO, (i+1)*self.L_CUADRADO, (j+1)*self.L_CUADRADO, fill="#0277BD")   
+                    self.window.create_rectangle(i*self.L_CUADRADO, j*self.L_CUADRADO, (i+1)*self.L_CUADRADO, (j+1)*self.L_CUADRADO, fill="#162B4E")   
 
     def caragarImagenes(self):
         fichas = ["alfil-blanco","alfil-negro","caballo-blanco", "caballo-negro","peon-blanco","peon-negro","reina-blanca","reina-negra","rey-blanco","rey-negro","torre-blanca","torre-negra"]
