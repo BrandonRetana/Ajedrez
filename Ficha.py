@@ -128,5 +128,8 @@ class ficha():
         print("Position not allowed")
         return False
 
+    def getName(self):
+        return self.name
+
 
     

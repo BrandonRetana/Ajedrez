@@ -4,79 +4,17 @@ class EstadoDeJuego():
 
     def __init__(self):
         self.piezas = [
-            ["torre-negra","caballo-negro","alfil-negro","reina-negra","rey-negro","alfil-negro","caballo-negro","torre-negra"],
-            ["peon-negro","peon-negro","peon-negro","peon-negro","peon-negro","peon-negro","peon-negro","peon-negro"],
+            [ficha("torre-negra",True,False,1,1),ficha("caballo-negro",False,False,1,2),ficha("alfil-negro",False,True,1,3),ficha("reina-negra",True,True,1,4),ficha("rey-negro",False,False,1,5),ficha("alfil-negro",False,True,1,6),ficha("caballo-negro",False,False,1,7),ficha("torre-negra",True,False,1,8)],
+            [ficha("peon-negro",False,False,2,1),ficha("peon-negro",False,False,2,2),ficha("peon-negro",False,False,2,3),ficha("peon-negro",False,False,2,4),ficha("peon-negro",False,False,2,5),ficha("peon-negro",False,False,2,6),ficha("peon-negro",False,False,2,7),ficha("peon-negro",False,False,2,8)],
             ["--","--","--","--","--","--","--","--"],
             ["--","--","--","--","--","--","--","--"],
             ["--","--","--","--","--","--","--","--"],
             ["--","--","--","--","--","--","--","--"],
-            ["peon-blanco","peon-blanco","peon-blanco","peon-blanco","peon-blanco","peon-blanco","peon-blanco","peon-blanco"],
-            ["torre-blanca","caballo-blanco","alfil-blanco","reina-blanca","rey-blanco","alfil-blanco","caballo-blanco","torre-blanca"]
+            [ficha("peon-blanco",False,False,7,1),ficha("peon-blanco",False,False,7,2),ficha("peon-blanco",False,False,7,3),ficha("peon-blanco",False,False,7,4),ficha("peon-blanco",False,False,7,5),ficha("peon-blanco",False,False,7,6),ficha("peon-blanco",False,False,7,7),ficha("peon-blanco",False,False,7,8)],
+            [ficha("torre-blanca",True,False,8,1),ficha("caballo-blanco",False,False,8,2),ficha("alfil-blanco",False,True,8,3),ficha("reina-blanca",True,True,8,4),ficha("rey-blanco",False,False,8,5),ficha("alfil-blanco",False,True,8,6),ficha("caballo-blanco",False,False,8,7),ficha("torre-blanca",True,False,8,8)]
         ]
 
-        self.pieceReal = [["--","--","--","--","--","--","--","--"],
-                          ["--","--","--","--","--","--","--","--"],
-                          ["--","--","--","--","--","--","--","--"],
-                          ["--","--","--","--","--","--","--","--"],
-                          ["--","--","--","--","--","--","--","--"],
-                          ["--","--","--","--","--","--","--","--"],
-                          ["--","--","--","--","--","--","--","--"],
-                          ["--","--","--","--","--","--","--","--"],]
-
-        
-    
-    def simpleCheck(self, x,y):
-        if (self.piezas[x][y] != "--"):
-            return True
-        return False
-
-    def printMatrix(self):
-        for i in range(0,7):
-            for j in range(0,7):
-                print(self.pieceReal[i][j])
 
 
-    def charger(self):
-        for x in range(0,7):
-            for y in range(0,7):
-                piece = self.piezas[x][y]
-                if (piece == "torre-negra"):
-                        self.pieceReal[x][y] = ficha("torre-negra",True,False,x,y)
 
-                elif (piece == "torre-blanco"):
-                        self.pieceReal[x][y] = ficha("torre-blanco",True,False,x,y)
-                
-                elif (piece == "caballo-negro"):
-                        self.pieceReal[x][y] = ficha("caballo-negro",False,False,x,y)
-
-                elif (piece == "caballo-blanco"):
-                        self.pieceReal[x][y] = ficha("caballo-blanco",False,False,x,y)
-
-                elif (piece == "alfil-negro"):
-                        self.pieceReal[x][y] = ficha("alfil-negro",False,True,x,y)
-
-                elif (piece == "alfil-blanco"):
-                        self.pieceReal[x][y] = ficha("alfil-blanco",False,True,x,y)
-
-                elif (piece == "reina-blanca"):
-                        self.pieceReal[x][y] = ficha("reina-blanca",True,True,x,y)
-
-                elif (piece == "reina-negra"):
-                        self.pieceReal[x][y] = ficha("reino-negra",True,True,x,y)
-
-                elif (piece == "rey-blanco"):
-                        self.pieceReal[x][y] = ficha("rey-blanco",False,False,x,y)
-                
-                elif (piece == "rey-negro"):
-                        self.pieceReal[x][y] = ficha("rey-negro",False,False,x,y)
-
-                elif (piece == "peon-blanco"):
-                        self.pieceReal[x][y] = ficha("peon-blanco",False,False,x,y)
-
-                elif (piece == "peon-negro"):
-                        self.pieceReal[x][y] = ficha("peon-negro",False,False,x,y)
-
-
-        self.charger()
-        self.printMatrix()
         

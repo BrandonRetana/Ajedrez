@@ -40,7 +40,7 @@ class Interfaz():
         for indice_i, i in enumerate(self.gs.piezas):
             for indice_j, j in enumerate(i):
                 if j!= "--":
-                    self.window.create_image(indice_j*self.L_CUADRADO,indice_i*self.L_CUADRADO, image=self.imagenes[j], anchor="nw", )
+                    self.window.create_image(indice_j*self.L_CUADRADO,indice_i*self.L_CUADRADO, image=self.imagenes[j.getName()], anchor="nw", )
                     
 
 interfaz = Interfaz(70)
