@@ -45,8 +45,8 @@ class Interfaz():
             if(self.gs.piezas[int(x1)-1][int(y1)-1].move(int(x2),int(y2))):
                 self.gs.piezas[int(x2)-1][int(y2)-1] = self.gs.piezas[int(x1)-1][int(y1)-1]
                 self.gs.piezas[int(x1)-1][int(y1)-1] = "--"
+                self.ventana.deletecommand = "all"
                 interfaz.mostrarFichas()
-
 
     def coordenadas(self,e):
         if(self.position1 == "null"):

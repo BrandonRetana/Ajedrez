@@ -38,8 +38,8 @@ class ficha():
         if(self.moveXY(X,Y)):
             return True
         else:
-            self.moveZ(X,Y)
-            return True
+            if(self.moveZ(X,Y)):
+                return True
         return False
 
 
@@ -139,6 +139,7 @@ class ficha():
 
     def move(self,X,Y):
         if(self.movementXY == True and self.movementV == True):
+            print("case")
             return self.moveXYZ(X,Y)
         elif(self.movementXY == True):
             return self.moveXY(X,Y)
