@@ -15,6 +15,8 @@ class ficha():
             #----Verifica si el campo no esta ocupado por otra ficha----#
             if(self.verification(X,Y)):
                 print("New position: " + str(X) + ", " + str(Y))
+                self.posX = X
+                self.posY = Y
                 return True
         print("Movement not allowed")
         return False
@@ -26,6 +28,8 @@ class ficha():
             if(abs(self.posX-X)*abs(self.posY-Y) == abs(self.posX-X) ** 2):
                 if(self.verification(X,Y)):
                     print("New position: " + str(X) + ", " + str(Y))
+                    self.posX = X
+                    self.posY = Y
                     return True
         print("Movement not allowed")
         return False
@@ -35,6 +39,8 @@ class ficha():
             return True
         else:
             self.moveZ(X,Y)
+            return True
+        return False
 
 
     #----Verifica si las casillas no son ocupadas por otras fichas----#        
@@ -130,6 +136,23 @@ class ficha():
 
     def getName(self):
         return self.name
+
+    def move(self,X,Y):
+        if(self.movementXY == True and self.movementV == True):
+            return self.moveXYZ(X,Y)
+        elif(self.movementXY == True):
+            return self.moveXY(X,Y)
+        elif(self.movementV == True):
+            return self.moveZ(X,Y)
+        else:
+            if(self.name == "peon-negro" or self.name == "peon-blanco"):
+                return self.pawnMove(X+1,Y+1)
+            elif(self.name == "caballo-negro" or self.name == "caballo-blanco"):
+                return self.moveL(X+1,Y+1)
+            else:
+                return self.kingMove(X+1,Y+1)
+                
+
 
 
     
