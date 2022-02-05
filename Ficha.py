@@ -118,10 +118,12 @@ class ficha():
     #---- Esta funcion saca el moviento que puede tener el peon ----#
     def pawnMove(self,i,j):
         validPosition = []
-        if (self.posX == 2 or self.posX == 7):
-            positions = [[self.posX, self.posY+1],[self.posX, self.posY+2],[self.posX+1, self.posY+1],[self.posX-1, self.posY+1]]
-        else :
-            positions= [[self.posX, self.posY+1],[self.posX+1, self.posY+1],[self.posX-1, self.posY+1]]
+        if (self.posX == 2):
+            positions = [[self.posX+1, self.posY],[self.posX+2, self.posY],[self.posX+1, self.posY+1],[self.posX+1, self.posY-1]]
+        elif(self.posX == 7):
+            positions = [[self.posX-1, self.posY],[self.posX-2, self.posY],[self.posX-1, self.posY-1],[self.posX-1, self.posY+1]]
+        else:
+            positions= [[self.posX+1, self.posY],[self.posX+1, self.posY+1],[self.posX+1, self.posY-1],[self.posX-1, self.posY],[self.posX-1, self.posY-1],[self.posX-1, self.posY+1]]
         for couple in positions:
             if (self.simpleVerification(couple[0],couple[1])):
                 validPosition.append(couple)
@@ -147,11 +149,11 @@ class ficha():
             return self.moveZ(X,Y)
         else:
             if(self.name == "peon-negro" or self.name == "peon-blanco"):
-                return self.pawnMove(X+1,Y+1)
+                return self.pawnMove(X,Y)
             elif(self.name == "caballo-negro" or self.name == "caballo-blanco"):
-                return self.moveL(X+1,Y+1)
+                return self.moveL(X,Y)
             else:
-                return self.kingMove(X+1,Y+1)
+                return self.kingMove(X,Y)
                 
 
 
