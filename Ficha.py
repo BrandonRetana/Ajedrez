@@ -118,7 +118,7 @@ class ficha():
     #---- Esta funcion saca el moviento que puede tener el peon ----#
     def pawnMove(self,i,j):
         validPosition = []
-        if (self.posY == 1):
+        if (self.posX == 2 or self.posX == 7):
             positions = [[self.posX, self.posY+1],[self.posX, self.posY+2],[self.posX+1, self.posY+1],[self.posX-1, self.posY+1]]
         else :
             positions= [[self.posX, self.posY+1],[self.posX+1, self.posY+1],[self.posX-1, self.posY+1]]
